@@ -10,16 +10,26 @@
 
   class Render {
     drawBox(x, y, count) {
-      context.fillStyle = "red";
+      context.fillStyle = "rgb(217, 229, 247)";
       var width = canvas.width / 4;
       var height = canvas.height / 4;
       x = width * (x - 1);
 
       y = height * (y - 1);
-      console.log(x, y, count);
       context.fillRect(x, y, width, height);
-      context.fillStyle = "blue";
-      context.fillText(count, x + 20, y + 20);
+      context.fillStyle = "rgb(36, 85, 158)";
+      context.fillText(count, x + 30, y + 50);
+      context.font = "32px serif";
+      context.strokeStyle = "rgb(36, 85, 158)";
+      context.strokeRect(x, y, width, height);
+      if(count === null) {
+        context.fillStyle = "white";
+        context.fillRect(x, y, width, height);
+        context.fillStyle = "transparent";
+        context.fillText(count, x + 30, y + 50);
+        context.strokeStyle = "rgb(36, 85, 158)";
+        context.strokeRect(x, y, width, height);
+      }
     }
   }
 

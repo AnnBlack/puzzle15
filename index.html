@@ -4,17 +4,69 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Puzzle 15</title>
+  <style type="text/css">
+    body {
+      position: relative;
+    }
+    #puzzle {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .buttons {
+      display: flex;
+      width: 40%;
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+    .btn {
+      width: 20%;
+      padding: 10px;
+      color: white;
+      cursor: pointer;
+      background-color: pink;
+      border-radius: 6px;
+      text-align: center;
+    }
+    .title {
+      font-size: 30px;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .notes {
+      display: flex;
+      width: 40%;
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+  </style>
 </head>
 <body>
   <div id="puzzle"></div>
+
+  <div class="buttons">
+    <div id="play" class="btn">Play</div>
+    <div id="restart" class="btn">Restart</div>
+    <div id="end" class="btn">End Game</div>
+  </div>
+
+  <h1 class="title">Puzzle 15</h1>
+
+  <div class="notes">
+    <p class="note">Time: <span id="time"></span></p>
+    <p class="note">Attempts: <span id="attempts"></span></p>
+  </div>
+
   <script src="index.js"></script>
   <script src="box.js"></script>
   <script src="space.js"></script>
   <script src="game.js"></script>
   <script src="render.js"></script>
   <script>
-    var Game = new game.game();
+    var Game = new game.play();
   </script>
 </body>
 </html>
